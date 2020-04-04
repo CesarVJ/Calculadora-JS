@@ -22,8 +22,11 @@ body {}
     position: relative;
     left: 20px;
     padding: 5px 5px;
-    background-color: white;
+    background-color: #000;
+    color: greenyellow;
     font-family: "courier new";
+    font-weight: 900;
+    font-size: x-large;
     overflow: hidden;
 }
 

@@ -65,7 +65,7 @@ function factorial(valor) {
 function absoluto(valor) {
     return Math.abs(valor);
 }
-
+//Funciones de BINARIO,OCTAL Y HEXADECIMAL
 function binario() {
     var resultado = '';
     var valor = Math.floor(x);
@@ -74,6 +74,7 @@ function binario() {
         valor = Math.floor(valor / 2);
     }
     resultado = resultado.split('').reverse().join('');
+    resultado += '.' + calcularParteDecimal(x);
     pantalla.innerHTML = resultado;
     op = 'no';
     xi = 1;
@@ -84,6 +85,57 @@ function esPar(numero) {
         return true;
     } else {
         return false;
+    }
+}
+
+function calcularParteDecimal(numero) {
+    numero = "." + (numero + "").split(".")[1];
+    var residuo = numero % 1;
+    var resultado = '';
+    while (residuo != 0) {
+        numero = residuo * 2;
+        resultado += (numero + "").split('.')[0];
+        residuo = numero % 1;
+    }
+    return resultado;
+}
+
+function octal() {
+    var resultado = '';
+    var valor = Math.floor(x);
+    var residuo = 0;
+    while (valor > 0) {
+        residuo = valor % 8;
+        valor = Math.floor(valor / 8);
+        resultado += residuo;
+    }
+    resultado = resultado.split('').reverse().join('');
+    pantalla.innerHTML = resultado;
+    op = 'no';
+    xi = 1;
+}
+
+function hexadecimal() {
+    var resultado = '';
+    var valor = Math.floor(x);
+    var residuo = 0;
+    while (valor > 0) {
+        residuo = valor % 16;
+        valor = Math.floor(valor / 16);
+        residuo = evaluarResiduo(residuo);
+        resultado += residuo;
+    }
+    resultado = resultado.split('').reverse().join('');
+    pantalla.innerHTML = resultado;
+    op = 'no';
+    xi = 1;
+}
+
+function evaluarResiduo(residuo) {
+    if (residuo <= 9) {
+        return residuo;
+    } else {
+        return residuo == 10 ? 'A' : residuo == 11 ? 'B' : residuo == 12 ? 'C' : residuo == 13 ? 'D' : residuo == 14 ? 'E' : 'F';
     }
 }
 //mostrar número en pantalla según se va escribiendo:
