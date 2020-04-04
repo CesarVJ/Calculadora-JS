@@ -66,6 +66,26 @@ function absoluto(valor) {
     return Math.abs(valor);
 }
 
+function binario() {
+    var resultado = '';
+    var valor = Math.floor(x);
+    while (valor > 0) {
+        resultado += esPar(valor) ? '0' : '1';
+        valor = Math.floor(valor / 2);
+    }
+    resultado = resultado.split('').reverse().join('');
+    pantalla.innerHTML = resultado;
+    op = 'no';
+    xi = 1;
+}
+
+function esPar(numero) {
+    if (numero % 2 === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
 //mostrar número en pantalla según se va escribiendo:
 function numero(xx) { //recoge el número pulsado en el argumento.
     if (x == "0" || xi == 1) { // inicializar un número, 

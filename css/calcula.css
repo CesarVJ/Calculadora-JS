@@ -68,3 +68,13 @@ body {}
 #unico {
     width: 120px;
 }
+
+.calculadora .conversion {
+    width: 150px;
+    height: 40px;
+}
+
+.calculadora .conversion:hover {
+    width: 148px;
+    height: 39px;
+}
