@@ -74,7 +74,9 @@ function binario() {
         valor = Math.floor(valor / 2);
     }
     resultado = resultado.split('').reverse().join('');
-    resultado += '.' + calcularParteDecimal(x);
+    if (x.includes('.')) {
+        resultado += '.' + calcularParteDecimal(x);
+    }
     pantalla.innerHTML = resultado;
     op = 'no';
     xi = 1;
@@ -110,7 +112,9 @@ function octal() {
         resultado += residuo;
     }
     resultado = resultado.split('').reverse().join('');
-    resultado += '.' + calcularParteDecimalOctal(x);
+    if (x.includes('.')) {
+        resultado += '.' + calcularParteDecimalOctal(x);
+    }
     pantalla.innerHTML = resultado;
     op = 'no';
     xi = 1;
