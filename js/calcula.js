@@ -110,9 +110,22 @@ function octal() {
         resultado += residuo;
     }
     resultado = resultado.split('').reverse().join('');
+    resultado += '.' + calcularParteDecimalOctal(x);
     pantalla.innerHTML = resultado;
     op = 'no';
     xi = 1;
+}
+
+function calcularParteDecimalOctal(numero) {
+    var residuo = "." + (numero + "").split(".")[1];
+    var producto = residuo * 8;
+    resultado = '';
+    while (residuo != 0) {
+        resultado += (producto + "").split('.')[0];
+        residuo = producto % 1;
+        producto = residuo * 8;
+    }
+    return resultado;
 }
 
 function hexadecimal() {
