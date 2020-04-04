@@ -74,6 +74,7 @@ function binario() {
         valor = Math.floor(valor / 2);
     }
     resultado = resultado.split('').reverse().join('');
+    x = x + '';
     if (x.includes('.')) {
         resultado += '.' + calcularParteDecimal(x);
     }
@@ -112,6 +113,7 @@ function octal() {
         resultado += residuo;
     }
     resultado = resultado.split('').reverse().join('');
+    x = x + '';
     if (x.includes('.')) {
         resultado += '.' + calcularParteDecimalOctal(x);
     }
@@ -143,6 +145,8 @@ function hexadecimal() {
         resultado += residuo;
     }
     resultado = resultado.split('').reverse().join('');
+    x = x + '';
+
     if (x.includes('.')) {
         resultado += '.' + calcularParteDecimalHexade(x);
     }
