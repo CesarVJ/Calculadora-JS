@@ -143,9 +143,24 @@ function hexadecimal() {
         resultado += residuo;
     }
     resultado = resultado.split('').reverse().join('');
+    if (x.includes('.')) {
+        resultado += '.' + calcularParteDecimalHexade(x);
+    }
     pantalla.innerHTML = resultado;
     op = 'no';
     xi = 1;
+}
+
+function calcularParteDecimalHexade(numero) {
+    var residuo = "." + (numero + "").split(".")[1];
+    var producto = residuo * 16;
+    resultado = '';
+    while (residuo != 0) {
+        resultado += evaluarResiduo((producto + "").split('.')[0]);
+        residuo = producto % 1;
+        producto = residuo * 16;
+    }
+    return resultado;
 }
 
 function evaluarResiduo(residuo) {
