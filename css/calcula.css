@@ -9,7 +9,7 @@ body {}
     background-color: #fff;
     margin: 0 auto;
     box-shadow: 12px 9px 5px -2px rgba(0, 0, 0, 0.5);
-    padding: 1rem;
+    padding: 0.2rem 1rem;
 }
 
 
@@ -33,9 +33,20 @@ body {}
 .calculadora [type=button] {
     width: 60px;
     height: 60px;
-    background-color: rgba(81, 43, 88, 0.1);
+    background-color: rgba(81, 43, 88, 0.3);
     padding: 0;
     opacity: 1;
+}
+
+.calculadora [type=button]:hover {
+    width: 58px;
+    height: 58px;
+    cursor: pointer;
+}
+
+.calculadora input.largo:hover {
+    width: 148px;
+    height: 38px;
 }
 
 
@@ -52,4 +63,8 @@ body {}
 
 .izq {
     margin-left: 1rem;
+}
+
+#unico {
+    width: 120px;
 }

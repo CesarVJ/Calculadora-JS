@@ -10,6 +10,7 @@
 <body>
     <div class="calculadora">
         <form action="#" name="calculadora" id="calculadora">
+            <h2>Calculadora Cientifica</h2>
             <p id="textoPantalla">0</p>
             <p>
                 <input type="button" class="largo" value="Retr" onclick="retro()" />
@@ -22,8 +23,8 @@
                 <input type="button" value="9" onclick="numero('9')" />
                 <input type="button" value="/" onclick="operar('/')" />
                 <input type="button" value="Raiz" onclick="raizc()" />
-                <input type="button" class="cientifica izq" value="log" onclick="log()" />
-                <input type="button" class="cientifica" value="x^2" onclick="cuadrado()" />
+                <input type="button" class="cientifica izq" value="log" onclick="operacionCientifica('log')" />
+                <input type="button" class="cientifica" value="x^2" onclick="operacionCientifica('cuadrado')" />
 
             </p>
             <p>
@@ -32,8 +33,8 @@
                 <input type="button" value="6" onclick="numero('6')" />
                 <input type="button" value="*" onclick="operar('*')" />
                 <input type="button" value="%" onclick="porcent()" />
-                <input type="button" class="cientifica izq" value="ln" onclick="raizc()" />
-                <input type="button" class="cientifica" value="x^3" onclick="cubo()" />
+                <input type="button" class="cientifica izq" value="ln" onclick="operacionCientifica('ln')" />
+                <input type="button" class="cientifica" value="x^3" onclick="operacionCientifica('cubo')" />
 
 
             </p>
@@ -43,8 +44,8 @@
                 <input type="button" value="3" onclick="numero('3')" />
                 <input type="button" value="-" onclick="operar('-')" />
                 <input type="button" value="1/x" onclick="inve()" />
-                <input type="button" class="cientifica izq" value="10^x" onclick="raizc()" />
-                <input type="button" class="cientifica " value="n!" onclick="cubo()" />
+                <input type="button" class="cientifica izq" value="10^x" onclick="operacionCientifica('diezX')" />
+                <input type="button" class="cientifica " value="n!" onclick="operacionCientifica('factorial')" />
             </p>
             <p>
                 <input type="button" value="0" onclick="numero('0')" />
@@ -52,8 +53,7 @@
                 <input type="button" value="." onclick="numero('.')" />
                 <input type="button" value="+" onclick="operar('+')" />
                 <input type="button" value="=" onclick="igualar()" />
-                <input type="button" class="cientifica izq" value="x^y" onclick="raizc()" />
-                <input type="button" class="cientifica" value="|x|" onclick="cubo()" />
+                <input type="button" class="cientifica izq" id="unico" value="|x|" onclick="operacionCientifica('absoluto')" />
             </p>
         </form>
     </div>
